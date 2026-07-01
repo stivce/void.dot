@@ -8,15 +8,16 @@ SETUP_URL="https://downloader.battle.net/download/getInstaller?os=win&installer=
 SETUP_FILE="/tmp/Battle.net-Setup.exe"
 
 # --- Prerequisites ---
-MISSING_PACMAN=()
+# Requires the void-repo-multilib repo enabled for the -32bit packages.
+MISSING_PKGS=()
 
-for pkg in curl lib32-glibc lib32-gcc-libs umu-launcher; do
-    pacman -Qi "$pkg" &>/dev/null || MISSING_PACMAN+=("$pkg")
+for pkg in curl glibc-32bit libgcc-32bit umu-launcher; do
+    xbps-query "$pkg" &>/dev/null || MISSING_PKGS+=("$pkg")
 done
 
-if [[ ${#MISSING_PACMAN[@]} -gt 0 ]]; then
-    echo "==> Installing missing packages: ${MISSING_PACMAN[*]}"
-    sudo pacman -S --noconfirm --needed "${MISSING_PACMAN[@]}"
+if [[ ${#MISSING_PKGS[@]} -gt 0 ]]; then
+    echo "==> Installing missing packages: ${MISSING_PKGS[*]}"
+    sudo xbps-install -Sy "${MISSING_PKGS[@]}"
 fi
 
 if ! command -v umu-run &>/dev/null; then

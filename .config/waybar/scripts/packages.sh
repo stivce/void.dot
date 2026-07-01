@@ -1,5 +1,3 @@
 #!/bin/bash
-updates=$(checkupdates 2>/dev/null | wc -l)
-aur_updates=$(paru -Qua 2>/dev/null | wc -l)
-total=$((updates + aur_updates))
-echo "{\"text\": \"$total \", \"tooltip\": \"$updates system, $aur_updates AUR\"}"
+updates=$(xbps-install -Sun 2>/dev/null | wc -l)
+echo "{\"text\": \"$updates \", \"tooltip\": \"$updates updates available\"}"
