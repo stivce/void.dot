@@ -28,3 +28,9 @@ Pictures/screenshots/
 !.local/share/applications/battlenet.desktop
 !.local/share/applications/battlenet.desktop
 !.local/share/applications/localsend.desktop
+
+# AI agents installed by pyinfra (tasks/ai.py), not tracked here
+.local/bin/claude
+.local/bin/opencode
+.local/share/claude/
+.local/share/opencode/
