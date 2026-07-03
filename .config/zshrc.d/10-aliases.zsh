@@ -1,15 +1,14 @@
 # ----- Common aliases (all platforms) -----
 
 # Safer file operations
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+alias rm='rm -i -R'
+alias cp='cp -i -R'
+alias mv='mv -i -R'
 
 # Directory listing
-alias l='ls -CF'
-alias ll='ls -lh'
-alias lll='ls -alh'
-alias la='ls -la'
+alias l='ls --color=auto'
+alias ll='ls -lh --color=auto'
+alias lll='ls -alh --color=auto'
 
 # Navigation
 alias ..='cd ..'
@@ -37,3 +36,6 @@ alias sz='source $HOME/.zshrc ; clear && echo "successfully sourced zsh\n"'
 alias p3server='python3 -m http.server 8000'
 alias ff='clear && fastfetch'
 alias z='zsh'
+
+# XBPS
+alias xi="sudo xbps-install -S"
