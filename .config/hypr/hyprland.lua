@@ -94,10 +94,10 @@ hl.env("NVD_BACKEND", "direct")
 -- Electron / Chromium Wayland
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
--- Qt Wayland (qt5ct carries the matugen dark palette)
+-- Qt Wayland (qt6ct carries the dark palette; the stack is qt6-only)
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
-hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 
 -----------------------
