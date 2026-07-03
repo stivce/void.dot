@@ -54,6 +54,22 @@ local menu        = "hyprlauncher"
 --   hl.exec_cmd(terminal)
 --   hl.exec_cmd("nm-applet")
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
+
+-- Audio: no systemd user services on runit, so the pipewire stack
+-- starts with the session (wireplumber/pulse need the pipewire socket,
+-- hence the small delays)
+hl.exec_cmd("pipewire")
+hl.exec_cmd("sleep 0.5 && wireplumber")
+hl.exec_cmd("sleep 0.5 && pipewire-pulse")
+
+-- Desktop shell
+hl.exec_cmd("waybar")
+hl.exec_cmd("swaync")
+hl.exec_cmd("/usr/libexec/hyprpolkitagent")
+hl.exec_cmd("hypridle")
+
+-- Wallpaper: the daemon restores the last set wallpaper from its cache
+hl.exec_cmd("awww-daemon")
 -- end)
 
 
