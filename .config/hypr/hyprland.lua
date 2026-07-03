@@ -63,8 +63,26 @@ local menu        = "hyprlauncher"
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("XCURSOR_THEME", "Volantes_Light")
+hl.env("XCURSOR_SIZE", "34")
+hl.env("HYPRCURSOR_SIZE", "34")
+
+-- GTK4: native Wayland (XWayland fallback breaks layer-shell input)
+hl.env("GDK_BACKEND", "wayland")
+
+-- NVIDIA
+hl.env("LIBVA_DRIVER_NAME", "nvidia")
+hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+hl.env("__GL_VRR_ALLOWED", "0")
+hl.env("NVD_BACKEND", "direct")
+
+-- Electron / Chromium Wayland
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
+
+-- Qt Wayland (qt5ct carries the matugen dark palette)
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
+hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
 
 
 -----------------------
