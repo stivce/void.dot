@@ -27,3 +27,4 @@ Pictures/screenshots/
 .ssh/*.key
 !.local/share/applications/battlenet.desktop
 !.local/share/applications/battlenet.desktop
+!.local/share/applications/localsend.desktop

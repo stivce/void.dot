@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=LocalSend
+Comment=Share files to nearby devices
+Exec=/home/sn0w/.AppImages/LocalSend.AppImage
+Icon=localsend
+Terminal=false
+Type=Application
+Categories=Network;FileTransfer;
