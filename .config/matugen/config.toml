@@ -20,3 +20,7 @@ output_path = "~/.config/gtk-4.0/gtk.css"
 [templates.wofi]
 input_path = "~/.config/matugen/templates/wofi.css"
 output_path = "~/.config/wofi/style.css"
+
+[templates.qt6ct]
+input_path = "~/.config/matugen/templates/qt6ct-colors.conf"
+output_path = "~/.config/qt6ct/colors/custom.conf"
