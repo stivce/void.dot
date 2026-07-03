@@ -34,3 +34,4 @@ Pictures/screenshots/
 .local/bin/opencode
 .local/share/claude/
 .local/share/opencode/
+.local/bin/umu-run
